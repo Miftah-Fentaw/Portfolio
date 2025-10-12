@@ -11889,7 +11889,7 @@ body {
 .project-overlay {
   background: none !important;
   opacity: 1 !important;
-  pointer-events: none;
+  pointer-events: auto;
 }
 
 .bg-gradient-primary-to-secondary {
