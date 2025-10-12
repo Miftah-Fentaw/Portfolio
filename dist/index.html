@@ -470,9 +470,9 @@
                                                     <div class="project-links">
                                                         <a class="btn btn-outline-primary btn-sm" href="https://github.com/MiftahFentaw/connect-social">
                                                             <i class="bi bi-github me-1"></i>
-                                                            view code
+                                                            View Code
                                                         </a>
-                                                        <a class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#previewModal" data-project="ConnectSocial">
+                                                        <a class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#previewModal" data-project="connectsocial">
                                                             <i class="bi bi-play-circle me-1"></i>
                                                             Preview
                                                         </a>
@@ -483,7 +483,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Project Card 3 - Data Analysis Tool-->
+                            <!-- Project Card 3 - Autosort file sortet script Tool-->
                             <div class="card overflow-hidden shadow rounded-4 border-0 mb-5 project-card">
                                 <div class="card-body p-0">
                                     <div class="row g-0">
@@ -509,9 +509,9 @@
                                                     <div class="project-links">
                                                         <a class="btn btn-outline-primary btn-sm" href="https://github.com/MiftahFentaw/AutoSort">
                                                             <i class="bi bi-github me-1"></i>
-                                                            view code
+                                                            View Code
                                                         </a>
-                                                        <a class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#previewModal" data-project="Autosort">
+                                                        <a class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#previewModal" data-project="autosort">
                                                             <i class="bi bi-play-circle me-1"></i>
                                                             Preview
                                                         </a>
@@ -548,7 +548,7 @@
                                                     <div class="project-links">
                                                         <a class="btn btn-outline-primary btn-sm" href="https://github.com/MiftahFentaw/Taskify">
                                                             <i class="bi bi-github me-1"></i>
-                                                            view code
+                                                            View Code
                                                         </a>
                                                         <a class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#previewModal" data-project="taskify">
                                                             <i class="bi bi-play-circle me-1"></i>
@@ -674,57 +674,6 @@
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
                 <!-- Core theme JS-->
                 <script src="js/scripts.js"></script>
-                <!-- Preview Modal Script-->
-                <script>
-                    const projects = {
-                        gebeya: [
-                            { type: 'image', src: 'assets/screenshots/gebeya1.png' },
-                            { type: 'image', src: 'assets/screenshots/gebeya2.png' },
-                            { type: 'image', src: 'assets/screenshots/gebeya3.png' },
-                        ],
-                        connectsocial: [
-                            { type: 'image', src: 'assets/screenshots/connectsocial1.png' },
-                            { type: 'image', src: 'assets/screenshots/connectsocial2.png' },
-                            { type: 'image', src: 'assets/screenshots/connectsocial3.png' },
-                        ],
-                        Autosort: [
-                            { type: 'image', src: 'assets/screenshots/Autosort1.png' },
-                            { type: 'image', src: 'assets/screenshots/Autosort2.png' },
-                            { type: 'image', src: 'assets/screenshots/Autosort3.png' },
-                        ],
-                        taskify: [
-                            { type: 'image', src: 'assets/screenshots/taskify1.png' },
-                            { type: 'image', src: 'assets/screenshots/taskify2.png' },
-                            { type: 'image', src: 'assets/screenshots/taskify3.png' },
-                        ],
-                    };
-
-                    const previewModal = document.getElementById('previewModal');
-                    const carouselInner = document.querySelector('#previewCarousel .carousel-inner');
-
-                    previewModal.addEventListener('show.bs.modal', (event) => {
-                        const button = event.relatedTarget;
-                        const projectKey = button.getAttribute('data-project');
-                        const media = projects[projectKey] || [];
-                        carouselInner.innerHTML = '';
-                        media.forEach((item, index) => {
-                            const active = index === 0 ? 'active' : '';
-                            if (item.type === 'image') {
-                                carouselInner.innerHTML += `
-        <div class="carousel-item ${active}">
-          <img src="${item.src}" class="d-block w-100" alt="Preview ${index + 1}">
-        </div>`;
-                            } else if (item.type === 'video') {
-                                carouselInner.innerHTML += `
-        <div class="carousel-item ${active}">
-          <video class="d-block w-100" controls>
-            <source src="${item.src}" type="video/mp4">
-          </video>
-        </div>`;
-                            }
-                        });
-                    });
-                </script>
             </div>
         </div>
     </div>

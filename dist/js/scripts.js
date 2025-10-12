@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const projectImages = {
                 gebeya: ["gebeya1.png", "gebeya2.png", "gebeya3.png"],
-                ConnectSocial: ["connectsocial1.png", "connectsocial2.png", "connectsocial3.png"],
-                Autosort: ["Autosort1.png", "Aurosort2.png", "Autosort3.png"],
+                connectsocial: ["connectsocial1.png", "connectsocial2.png", "connectsocial3.png"],
+                autosort: ["Autosort1.png", "Autosort2.png", "Autosort3.png"],
                 taskify: ["taskify1.png", "taskify2.png", "taskify3.png"],
             };
 
