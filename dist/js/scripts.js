@@ -3,6 +3,7 @@
 * Copyright 2013-2025 Miftah Fentaw
 * Licensed under undefined (https://github.com/StartBootstrap/Miftah-portfolio/blob/master/LICENSE)
 */
+
 document.addEventListener("DOMContentLoaded", () => {
     // Smooth scrolling for internal links
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -46,6 +47,48 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 carouselInner.innerHTML = '<div class="carousel-item active"><div class="p-5"><p>No images available for this project.</p></div></div>';
             }
+        });
+    }
+
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const projectType = document.getElementById('projectType').value;
+            const message = document.getElementById('message').value;
+
+            const submitButton = document.getElementById('submitButton');
+            const submitSuccessMessage = document.getElementById('submitSuccessMessage');
+            const submitErrorMessage = document.getElementById('submitErrorMessage');
+
+            submitButton.disabled = true;
+
+            fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name, email, projectType, message }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message === 'Message sent successfully') {
+                    submitSuccessMessage.classList.remove('d-none');
+                    contactForm.reset();
+                } else {
+                    submitErrorMessage.classList.remove('d-none');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                submitErrorMessage.classList.remove('d-none');
+            })
+            .finally(() => {
+                submitButton.disabled = false;
+            });
         });
     }
 });
