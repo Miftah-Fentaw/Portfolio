@@ -1,0 +1,23 @@
+// Import Variables
+@import "variables";
+
+// Import Bootstrap
+@import "bootstrap/scss/bootstrap.scss";
+
+// Import Global Theme Styles
+.bg-dark-about {
+    background-color: #212529 !important; // Dark background
+    color: #f8f9fa !important; // Light text color
+}
+
+.bg-dark-about h2,
+.bg-dark-about p {
+    color: #f8f9fa !important;
+}
+
+@import "global";
+@import "utilities";
+
+// Import Custom Component Styles
+@import "components/feature";
+@import "components/profile";

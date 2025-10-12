@@ -1,0 +1,374 @@
+// Global styling for entire theme
+
+// Resets for body and html height for sticky footer
+body,
+html {
+    height: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: $dark-bg;
+    color: $light-text;
+    padding-top: 56px; // Add padding to body to avoid content being hidden by the fixed navbar
+}
+
+.card,
+.rounded-4 {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.form-control {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: $light-text;
+    border: none;
+}
+
+.form-control:focus {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: $light-text;
+    border: none;
+    box-shadow: none;
+}
+
+.form-floating > label {
+    color: rgba(242, 242, 242, 0.7);
+}
+
+.navbar-transparent {
+    background-color: transparent;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    margin: 0 5px;
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+// Custom Artistic Enhancements
+
+// Enhanced skill titles styling
+.skill-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #1e30f3;
+    text-shadow: 0 1px 2px rgba(30, 48, 243, 0.3);
+}
+
+.skill-description {
+    font-size: 0.85rem;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+// Enhanced skill containers
+.skill-container {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(30, 48, 243, 0.1);
+    
+    &:hover {
+        border-color: rgba(30, 48, 243, 0.3);
+        background: rgba(30, 48, 243, 0.05);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(30, 48, 243, 0.2);
+    }
+    
+    .skill-icon {
+        color: #1e30f3;
+        font-size: 1.5rem;
+        filter: drop-shadow(0 2px 4px rgba(30, 48, 243, 0.3));
+    }
+}
+.profile-image-container {
+    position: relative;
+    display: inline-block;
+    
+    .profile-image {
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 2;
+        
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(30, 48, 243, 0.4) !important;
+        }
+    }
+    
+    .profile-glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 320px;
+        height: 320px;
+        background: linear-gradient(45deg, rgba(30, 48, 243, 0.3), rgba(226, 30, 128, 0.3));
+        border-radius: 50%;
+        filter: blur(20px);
+        z-index: 1;
+        animation: pulse-glow 3s ease-in-out infinite;
+    }
+}
+
+@keyframes pulse-glow {
+    0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+.developer-stats {
+    .stat-item {
+        padding: 1rem;
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+        
+        &:hover {
+            transform: translateY(-5px);
+            background: rgba(30, 48, 243, 0.1);
+            border-color: rgba(30, 48, 243, 0.3);
+        }
+    }
+}
+
+.social-link {
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 50%;
+    
+    &:hover {
+        transform: translateY(-3px) scale(1.1);
+        background: rgba(30, 48, 243, 0.1);
+    }
+}
+
+.experience-card {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+        border-color: rgba(30, 48, 243, 0.3);
+    }
+}
+
+.project-card {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4) !important;
+        border-color: rgba(30, 48, 243, 0.3);
+        
+        .project-image {
+            transform: scale(1.05);
+        }
+    }
+    
+    .project-image {
+        transition: all 0.3s ease;
+    }
+    
+    .project-badge {
+        .badge {
+            font-size: 0.75rem;
+            padding: 0.5rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+    }
+}
+
+.cta-buttons {
+    .btn {
+        transition: all 0.3s ease;
+        border-radius: 25px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(30, 48, 243, 0.3);
+        }
+    }
+}
+
+.contact-info {
+    transition: all 0.3s ease;
+    padding: 1rem;
+    border-radius: 15px;
+    
+    &:hover {
+        transform: translateY(-3px);
+        background: rgba(30, 48, 243, 0.05);
+    }
+    
+    i {
+        transition: all 0.3s ease;
+    }
+    
+    &:hover i {
+        transform: scale(1.2);
+        color: #1e30f3 !important;
+    }
+}
+
+// Gradient text enhancement
+.text-gradient {
+    background: linear-gradient(45deg, #1e30f3, #e21e80);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+// Enhanced form styling
+.form-floating {
+    .form-control {
+        border-radius: 15px;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+        
+        &:focus {
+            border-color: rgba(30, 48, 243, 0.5);
+            box-shadow: 0 0 0 0.2rem rgba(30, 48, 243, 0.25);
+        }
+    }
+    
+    label {
+        font-weight: 500;
+    }
+}
+
+// Enhanced button styling
+.btn-primary {
+    background: linear-gradient(45deg, #1e30f3, #e21e80);
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        background: linear-gradient(45deg, #1826c2, #c41a6b);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(30, 48, 243, 0.3);
+    }
+}
+
+.btn-outline-primary {
+    border: 2px solid #1e30f3;
+    color: #1e30f3;
+    border-radius: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        background: #1e30f3;
+        border-color: #1e30f3;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(30, 48, 243, 0.3);
+    }
+}
+
+// Enhanced card styling
+.card {
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    
+    &:hover {
+        border-color: rgba(30, 48, 243, 0.3);
+    }
+}
+
+// Enhanced badge styling
+.badge {
+    border-radius: 20px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+// Smooth animations
+* {
+    transition: all 0.3s ease;
+}
+
+// Custom scrollbar
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #1e30f3, #e21e80);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #1826c2, #c41a6b);
+}
+
+// Project overlay styling
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(30, 48, 243, 0.9);
+    opacity: 0;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-links {
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
+.project-card:hover .project-links {
+    transform: translateY(0);
+}
+
+.project-overlay {
+    background: none !important;
+    opacity: 1 !important;
+    pointer-events: none;
+}

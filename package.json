@@ -1,0 +1,49 @@
+{
+    "title": "Miftah-portfolio",
+    "name": "Miftah-portfolio",
+    "version": "1.0.1",
+    "scripts": {
+        "build": "npm run clean && npm run build:pug && npm run build:scss && npm run build:scripts && npm run build:assets",
+        "build:assets": "node scripts/build-assets.js",
+        "build:pug": "node scripts/build-pug.js",
+        "build:scripts": "node scripts/build-scripts.js",
+        "build:scss": "node scripts/build-scss.js",
+        "clean": "node scripts/clean.js",
+        "start": "npm run build && node scripts/start.js",
+        "start:debug": "npm run build && node scripts/start-debug.js"
+    },
+    "description": "A portfolio website for Miftah Fentaw",
+    "keywords": [
+        "css",
+        "sass",
+        "html",
+        "responsive",
+        "theme",
+        "template"
+    ],
+    "bugs": {
+        "url": "",
+        "email": "Miftahfentaw186@gmail.com"
+    },
+    "author": "Miftah Fentaw",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/MiftahFentaw/Miftah-portfolio.git"
+    },
+    "dependencies": {
+        "bootstrap": "5.2.3"
+    },
+    "devDependencies": {
+        "@prettier/plugin-pug": "^3.4.2",
+        "autoprefixer": "10.4.14",
+        "browser-sync": "2.29.1",
+        "chokidar": "3.5.3",
+        "concurrently": "6.3.0",
+        "postcss": "8.4.21",
+        "prettier": "^3.6.2",
+        "pug": "3.0.2",
+        "sass": "1.60.0",
+        "shelljs": "0.8.5",
+        "upath": "2.0.1"
+    }
+}
