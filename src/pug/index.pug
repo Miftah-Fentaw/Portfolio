@@ -29,10 +29,10 @@ html(lang="en")
               // Header text content
               .text-center.text-lg-start
                 .badge.bg-gradient-primary-to-secondary.text-white.mb-4.px-4.py-2
-                  .text-uppercase.fw-bold 🚀 Junior Mobile Developer & IT Student
+                  .text-uppercase.fw-bold 🚀 Ful stackMobile Developer & IT Student
                 .fs-3.fw-light.text-muted.mb-2 Building the future with passion and dedication
                 h1.display-3.fw-bolder.mb-4
-                  span.text-gradient.d-inline Mobile & Web Development
+                  span.text-gradient.d-inline Full Stack Mobile Application
                 .developer-tagline.mb-4
                   p.lead.text-muted.fw-light Transforming ideas into powerful, scalable applications with cutting-edge technology
                 .cta-buttons.d-flex.gap-3.justify-content-center.justify-content-lg-start
@@ -60,7 +60,7 @@ html(lang="en")
             .col-xxl-8
               .text-center.my-5
                 h2.display-5.fw-bolder.mb-4
-                  span.text-gradient.d-inline About Miftah Fentaw
+                  span.text-gradient.d-inline About Me
                 .developer-intro.mb-5
                   .row.gx-4.align-items-center
                     .col-lg-4.mb-4.mb-lg-0
@@ -75,7 +75,7 @@ html(lang="en")
                       .developer-stats.row.text-center.mt-4
                         .col-4
                           .stat-item
-                            .stat-number.text-primary.fw-bold.fs-2 3+
+                            .stat-number.text-primary.fw-bold.fs-2 10+
                             .stat-label.text-muted Projects Completed
                         .col-4
                           .stat-item
@@ -98,14 +98,17 @@ html(lang="en")
       // Resume Section
       section#resume.py-5
         .container.px-5.my-5
-          .text-center.mb-5
+          .text-center.mb-5.fade-in-up
             h2.display-5.fw-bolder
               span.text-gradient.d-inline Resume
             p.lead.fw-light.mb-4 My experience and qualifications.
+            a.btn.btn-primary.btn-lg.mt-3(href="assets/resume.png", download="resume.png")
+              i.bi.bi-download.me-2
+              | Resume
           .row.gx-5.justify-content-center
             .col-lg-11.col-xl-9.col-xxl-8
               // Experience Section
-              section
+              section.slide-in-left
                 .d-flex.align-items-center.justify-content-between.mb-4
                   h2.text-primary.fw-bolder Experience
                 // Mobile Development Internship
@@ -177,7 +180,7 @@ html(lang="en")
                           ul.mb-0
                             li Flutter Development Bootcamp
                             li React Native Fundamentals
-                            li Firebase for Mobile Apps
+                            li Firebase/Supebase for Mobile Apps
                             li Git and Version Control
               // Divider
               .pb-5
@@ -295,13 +298,34 @@ html(lang="en")
                             div
                               .skill-title Dart
                               .skill-description Flutter mobile development
-                        .col
+                        .col.mb-4.mb-md-0
+                          .d-flex.align-items-center.bg-light.rounded-4.p-3.h-100.skill-container
+                            .me-3
+                              i.bi.bi-git.skill-icon
+                            div
+                              .skill-title Git
+                              .skill-description Version control system
+                        .col.mb-4.mb-md-0
+                          .d-flex.align-items-center.bg-light.rounded-4.p-3.h-100.skill-container
+                            .me-3
+                              i.bi.bi-github.skill-icon
+                            div
+                              .skill-title GitHub
+                              .skill-description Code hosting and collaboration
+                        .col.mb-4.mb-md-0
                           .d-flex.align-items-center.bg-light.rounded-4.p-3.h-100.skill-container
                             .me-3
                               i.bi.bi-code-slash.skill-icon
                             div
                               .skill-title JavaScript
-                              .skill-description mobile app development and backend
+                              .skill-description Web development scripting
+                        .col.mb-4.mb-md-0
+                          .d-flex.align-items-center.bg-light.rounded-4.p-3.h-100.skill-container
+                            .me-3
+                              i.bi.bi-code-slash.skill-icon
+                            div
+                              .skill-title C++
+                              .skill-description System programming
 
       // Projects Section
       section#projects.py-5
@@ -350,30 +374,30 @@ html(lang="en")
                     .col-md-6.order-md-2
                       .p-5
                         .project-badge.mb-3
-                          span.badge.bg-primary.me-2 React Native
-                          span.badge.bg-warning.me-2 Node.js
-                          span.badge.bg-info MongoDB
-                        h2.fw-bolder.mb-3 ConnectSocial Platform
-                        p.mb-4 Built a full-stack social media platform with React Native for the frontend and Node.js/Express for the backend. Features include real-time messaging, post creation with media uploads, user authentication with JWT, and comprehensive notification system using Socket.io.
+                          span.badge.bg-primary.me-2 Flutter
+                          span.badge.bg-warning.me-2 Offline-app
+                          span.badge.bg-info Local
+                        h2.fw-bolder.mb-3 Huda Islamic
+                        p.mb-4 Built a basic offline Islamic app using Flutter. The app includes simple features like Quran reading (text only), a Tasbih counter, access to a few Islamic books (PDF or text), and a basic section for daily duas or reminders. Everything works offline, with a clean and minimal UI. The project was created to practice Flutter and build a useful tool for everyday Islamic use.
                         .project-features.mb-3
                           strong Features:
-                          | Real-time chat, Media sharing, User profiles, Push notifications, Content moderation
+                          | Quran Reading, Tasbih, Islamic Books, Many Other, 
                     .col-md-6.order-md-1
                       .position-relative
                         img.img-fluid.project-image(
-                          src="https://dummyimage.com/400x300/e21e80/ffffff&text=ConnectSocial",
-                          alt="ConnectSocial Platform",
+                          src="assets/huda.jpg",
+                          alt="huda islamic",
                           style="width: 100%; height: 100%; object-fit: cover"
                         )
                         .project-overlay
                           .project-links
-                            a.btn.btn-outline-primary.btn-sm(href="https://github.com/MiftahFentaw/connect-social")
+                            a.btn.btn-outline-primary.btn-sm(href="https://github.com/Miftah-Fentaw/Huda-Islamic.git")
                               i.bi.bi-github.me-1
                               | View Code
                             a.btn.btn-primary.btn-sm(
                               data-bs-toggle="modal",
                               data-bs-target="#previewModal",
-                              data-project="connectsocial"
+                              data-project="huda"
                             )
                               i.bi.bi-play-circle.me-1
                               | Preview
@@ -385,19 +409,19 @@ html(lang="en")
                     .col-md-6
                       .p-5
                         .project-badge.mb-3
-                          span.badge.bg-primary.me-2 Python
-                          span.badge.bg-success.me-2 Automation
-                          span.badge.bg-info Scripting
-                        h2.fw-bolder.mb-3 AutoSort — File Organizer Script
-                        p.mb-4 Created a simple Python automation script that organizes files into folders based on their type (images, videos, documents, etc.). This project helped me learn file handling, automation, and scripting basics using Python.
+                          span.badge.bg-primary.me-2 Flutter
+                          span.badge.bg-success.me-2 mobile app
+                          span.badge.bg-info offline + online
+                        h2.fw-bolder.mb-3 Mance player
+                        p.mb-4 Developed a lightweight offline media player app using Flutter. The application allows users to browse and play local audio and video files with basic functionality such as play, pause, seek, and volume control. It supports common formats like MP3 and MP4, and features a straightforward layout for ease of use. This project was built to explore media handling in Flutter and improve understanding of local file access and playback features.
                         .project-features.mb-3
                           strong Features:
-                          | File sorting, Folder creation, Automation, Lightweight and easy to use
+                          | local files, Folder creation, video playing, Light audio and video playing,easy to use, multiple file formats
                     .col-md-6
                       .position-relative
                         img.img-fluid.project-image(
-                          src="https://dummyimage.com/400x300/198754/ffffff&text=DataInsight",
-                          alt="Folder Auto sortet",
+                          src="assets/Mance.jpg",
+                          alt="Mance Player",
                           style="width: 100%; height: 100%; object-fit: cover"
                         )
                         .project-overlay
@@ -420,9 +444,9 @@ html(lang="en")
                     .col-md-6.order-md-2
                       .p-5
                         .project-badge.mb-3
-                          span.badge.bg-primary.me-2 Kotlin
+                          span.badge.bg-primary.me-2 React native
                           span.badge.bg-secondary.me-2 Android
-                          span.badge.bg-success Supebase
+                          span.badge.bg-success Firebase
                         h2.fw-bolder.mb-3 Taskify
                         p.mb-4 Built a very detailed,robust and responsive to-do and task management Mobile app where users can add, edit, and delete daily tasks. Data is stored in supebase , and the UI updates instantly.
                         .project-features.mb-3
@@ -431,7 +455,7 @@ html(lang="en")
                     .col-md-6.order-md-1
                       .position-relative
                         img.img-fluid.project-image(
-                          src="https://dummyimage.com/400x300/6c757d/ffffff&text=DevFlow+CLI",
+                          src="assets/Taskify.jpg",
                           alt="Taskify",
                           style="width: 100%; height: 100%; object-fit: cover"
                         )
@@ -466,70 +490,70 @@ html(lang="en")
                           span.carousel-control-next-icon(aria-hidden='true')
                           span.visually-hidden Next
 
-    // Contact Section
-section#contact.py-5
-  .container.px-5.my-5
-    .text-center.mb-5
-      h2.display-5.fw-bolder.mb-4
-        span.text-gradient.d-inline Let's Build Something Amazing Together
-      p.lead.fw-light.mb-4 Ready to turn your ideas into reality? Let's discuss your next project!
-    .row.gx-5.justify-content-center
-      .col-lg-8.col-xl-6.col-xxl-4
-        form#contactForm(data-sb-form-api-token="API_TOKEN")
-          .form-floating.mb-3
-            input#name.form-control(
-              type="text",
-              placeholder="Enter your name...",
-              data-sb-validations="required"
-            )
-            label(for="name") Full name
-            .invalid-feedback(data-sb-feedback="name:required") A name is required.
-          .form-floating.mb-3
-            input#email.form-control(
-              type="email",
-              placeholder="name@example.com",
-              data-sb-validations="required,email"
-            )
-            label(for="email") Email address
-            .invalid-feedback(data-sb-feedback="email:required") An email is required.
-            .invalid-feedback(data-sb-feedback="email:email") Email is not valid.
-          .form-floating.mb-3
-            select#projectType.form-control(data-sb-validations="required")
-              option(value="") Select project type...
-              option(value="mobile-app") Mobile App Development
-              option(value="web-app") Web Application
-              option(value="full-stack") Full Stack Solution
-              option(value="consultation") Technical Consultation
-              option(value="other") Other
-            label(for="projectType") Project Type
-            .invalid-feedback(data-sb-feedback="projectType:required") Please select a project type.
-          .form-floating.mb-3
-            textarea#message.form-control(
-              placeholder="Tell me about your project...",
-              style="height: 10rem",
-              data-sb-validations="required"
-            )
-            label(for="message") Project Details
-            .invalid-feedback(data-sb-feedback="message:required") Please tell me about your project.
-          // Submit success message
-          #submitSuccessMessage.d-none
-            .text-center.mb-3
-              .fw-bolder.text-success.mb-2
-                i.bi.bi-check-circle.me-2
-                | Message sent successfully!
-              p.text-muted I'll get back to you within 24 hours to discuss your project.
-          // Submit error message
-          #submitErrorMessage.d-none
-            .text-center.text-danger.mb-3
-              i.bi.bi-exclamation-triangle.me-2
-              | Error sending message!
-          // Submit Button
-          .d-grid
-            button#submitButton.btn.btn-primary.btn-lg.px-4.py-3(type="submit")
-              i.bi.bi-send.me-2
-              | Send Message
+      // Contact Section
+      section#contact.py-5
+        .container.px-5.my-5
+          .text-center.mb-5
+            h2.display-5.fw-bolder.mb-4
+              span.text-gradient.d-inline Let's Build Something Amazing Together
+            p.lead.fw-light.mb-4 Ready to turn your ideas into reality? Let's discuss your next project!
+          .row.gx-5.justify-content-center
+            .col-lg-8.col-xl-6.col-xxl-4
+              form#contactForm(data-sb-form-api-token="API_TOKEN")
+                .form-floating.mb-3
+                  input#name.form-control(
+                    type="text",
+                    placeholder="Enter your name...",
+                    data-sb-validations="required"
+                  )
+                  label(for="name") Full name
+                  .invalid-feedback(data-sb-feedback="name:required") A name is required.
+                .form-floating.mb-3
+                  input#email.form-control(
+                    type="email",
+                    placeholder="name@example.com",
+                    data-sb-validations="required,email"
+                  )
+                  label(for="email") Email address
+                  .invalid-feedback(data-sb-feedback="email:required") An email is required.
+                  .invalid-feedback(data-sb-feedback="email:email") Email is not valid.
+                .form-floating.mb-3
+                  select#projectType.form-control(data-sb-validations="required")
+                    option(value="") Select project type...
+                    option(value="mobile-app") Mobile App Development
+                    option(value="web-app") Web Application
+                    option(value="full-stack") Full Stack Solution
+                    option(value="consultation") Technical Consultation
+                    option(value="other") Other
+                  label(for="projectType") Project Type
+                  .invalid-feedback(data-sb-feedback="projectType:required") Please select a project type.
+                .form-floating.mb-3
+                  textarea#message.form-control(
+                    placeholder="Tell me about your project...",
+                    style="height: 10rem",
+                    data-sb-validations="required"
+                  )
+                  label(for="message") Project Details
+                  .invalid-feedback(data-sb-feedback="message:required") Please tell me about your project.
+                // Submit success message
+                #submitSuccessMessage.d-none
+                  .text-center.mb-3
+                    .fw-bolder.text-success.mb-2
+                      i.bi.bi-check-circle.me-2
+                      | Message sent successfully!
+                    p.text-muted I'll get back to you within 24 hours to discuss your project.
+                // Submit error message
+                #submitErrorMessage.d-none
+                  .text-center.text-danger.mb-3
+                    i.bi.bi-exclamation-triangle.me-2
+                    | Error sending message!
+                // Submit Button
+                .d-grid
+                  button#submitButton.btn.btn-primary.btn-lg.px-4.py-3(type="submit")
+                    i.bi.bi-send.me-2
+                    | Send Message
 
-        // Footer
-        include includes/footer.pug
+    // Footer
+    include includes/footer.pug
 
-        include includes/scripts.pug
+    include includes/scripts.pug

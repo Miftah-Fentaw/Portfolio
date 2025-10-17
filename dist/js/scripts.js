@@ -16,6 +16,38 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // Scroll-triggered animations using Intersection Observer
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+            }
+        });
+    }, observerOptions);
+
+    // Observe sections for animations
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+
+    // Observe text elements (headings, paragraphs)
+    const textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, .lead');
+    textElements.forEach(element => {
+        observer.observe(element);
+    });
+
+    // Observe containers (cards, skill containers, etc.)
+    const containers = document.querySelectorAll('.card, .skill-container, .experience-card, .project-card, .developer-stats .stat-item');
+    containers.forEach(container => {
+        observer.observe(container);
+    });
+
     const previewModal = document.getElementById("previewModal");
     if (previewModal) {
         previewModal.addEventListener("show.bs.modal", (event) => {
@@ -25,8 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
             carouselInner.innerHTML = ""; // Clear previous items
 
             const projectImages = {
-                gebeya: ["gebeya1.png", "gebeya2.png", "gebeya3.png"],
-                connectsocial: ["connectsocial1.png", "connectsocial2.png", "connectsocial3.png"],
+                gebeya: ["gebeya1.png", "gebeya2.png", "gebeya3.png","gebeya4.png"],
+                huda: ["huda1.png", "huda2.png", "huda3.png","huda4.png"],
                 autosort: ["Autosort1.png", "Autosort2.png", "Autosort3.png"],
                 taskify: ["taskify1.png", "taskify2.png", "taskify3.png"],
             };
@@ -55,16 +87,60 @@ document.addEventListener("DOMContentLoaded", () => {
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
             const projectType = document.getElementById('projectType').value;
-            const message = document.getElementById('message').value;
+            const message = document.getElementById('message').value.trim();
 
             const submitButton = document.getElementById('submitButton');
             const submitSuccessMessage = document.getElementById('submitSuccessMessage');
             const submitErrorMessage = document.getElementById('submitErrorMessage');
 
+            // Client-side validation
+            let isValid = true;
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const projectTypeSelect = document.getElementById('projectType');
+            const messageTextarea = document.getElementById('message');
+
+            // Reset previous validation states
+            nameInput.classList.remove('is-invalid');
+            emailInput.classList.remove('is-invalid');
+            projectTypeSelect.classList.remove('is-invalid');
+            messageTextarea.classList.remove('is-invalid');
+
+            // Validate name
+            if (!name) {
+                nameInput.classList.add('is-invalid');
+                isValid = false;
+            }
+
+            // Validate email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email || !emailRegex.test(email)) {
+                emailInput.classList.add('is-invalid');
+                isValid = false;
+            }
+
+            // Validate project type
+            if (!projectType) {
+                projectTypeSelect.classList.add('is-invalid');
+                isValid = false;
+            }
+
+            // Validate message
+            if (!message) {
+                messageTextarea.classList.add('is-invalid');
+                isValid = false;
+            }
+
+            if (!isValid) {
+                return;
+            }
+
             submitButton.disabled = true;
+            submitSuccessMessage.classList.add('d-none');
+            submitErrorMessage.classList.add('d-none');
 
             fetch('/api/contact', {
                 method: 'POST',

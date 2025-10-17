@@ -16,7 +16,7 @@ export default function handler(req, res) {
     });
 
     const mailOptions = {
-      from: `'''${name}''' <${email}>`,
+      from: `${name} <${email}>`,
       to: 'Miftahfentawdev@gmail.com',
       subject: `New project inquiry: ${projectType}`,
       text: message,
