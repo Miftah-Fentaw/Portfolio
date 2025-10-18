@@ -1,0 +1,81 @@
+
+html {
+    scroll-behavior: smooth;
+}
+
+.btn, .social-link {
+    transition: all 0.3s ease-in-out;
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+    text-shadow: 0 4px 15px rgba(45, 97, 243, 0.6);
+}
+
+.project-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+
+.modal-header, .modal-body {
+    color: #212529;
+}
+
+.modal-title {
+    font-weight: 600;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0.5rem;
+}
+
+.carousel {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 1rem;
+}
+
+
+@media (max-width: 991.98px) {
+    .navbar {
+        background-color: #212529 !important;
+    }
+
+    header#home h1.display-3 {
+        font-size: 2.75rem;
+    }
+
+    header#home .text-center.text-lg-start {
+        margin-bottom: 3rem;
+    }
+
+    .developer-stats .col-4 {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    .developer-stats .col-4:last-child {
+        margin-bottom: 0;
+    }
+
+    .experience-card .row,
+    #resume .card .row {
+        flex-direction: column;
+    }
+}
+}

@@ -436,10 +436,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    pointer-events: none; 
+    z-index: 5; 
 }
 
 .project-card:hover .project-overlay {
     opacity: 1;
+    pointer-events: auto;
 }
 
 .project-links {
@@ -460,4 +463,57 @@ body {
     background: none !important;
     opacity: 1 !important;
     pointer-events: auto;
+}
+
+body.modal-open {
+    .project-overlay {
+        pointer-events: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
+}
+
+
+.modal,
+#previewModal {
+    z-index: 2000 !important;
+}
+
+.project-links {
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
+.project-card:hover .project-links {
+    transform: translateY(0);
+}
+
+// Preview modal styles
+.preview-image {
+    max-height: 400px;
+    object-fit: contain;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.modal-md {
+    max-width: 600px;   
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(30, 48, 243, 0.8);
+    border-radius: 50%;
+    padding: 10px;
 }

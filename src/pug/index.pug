@@ -16,10 +16,13 @@ html(lang="en")
 
     include includes/css.pug
 
+    // Custom CSS for animations and modal fixes
+    link(rel="stylesheet", href="css/custom.css")
+
   body.d-flex.flex-column.h-100
     main.flex-shrink-0
       // Navigation
-      include includes/navbar.pug
+      include includes/navbar.pug                                                                                                                                                                                                                                                    
 
       // Home Section
       header#home.py-5
@@ -334,161 +337,132 @@ html(lang="en")
             h2.display-5.fw-bolder
               span.text-gradient.d-inline Projects
             p.lead.fw-light.mb-4 My recent work.
-          .row.gx-5.justify-content-center
-            .col-lg-11.col-xl-9.col-xxl-8
-              // Project Card 1 - Gebeya E-commerce App
-              .card.overflow-hidden.shadow.rounded-4.border-0.mb-5.project-card
-                .card-body.p-0
-                  .row.g-0
-                    .col-md-6
-                      .p-5
-                        .project-badge.mb-3
-                          span.badge.bg-primary.me-2 Flutter
-                          span.badge.bg-secondary.me-2 Provider
-                          span.badge.bg-success Firebase
-                        h2.fw-bolder.mb-3 Gebeya E-commerce Mobile App
-                        p.mb-4 Developed a comprehensive cross-platform e-commerce mobile application for Gebeya using Flutter, featuring advanced product listings, intelligent shopping cart functionality, and secure payment integration. Implemented state management with Provider pattern and integrated with Firebase for real-time data synchronization and user authentication.
-                        .project-features.mb-3
-                          strong Features:
-                          | Real-time inventory, Push notifications, Offline support, Multi-language support, User authentication, Payment integration
-                    .col-md-6
-                        .position-relative
-                            img.img-fluid.project-image(src='assets/gebeya.png', alt='Gebeya E-commerce App', style='width: 100%; height: 100%; object-fit: cover;')
-                            .project-overlay
-                                .project-links
-                                    a.btn.btn-outline-primary.btn-sm(href="https://github.com/MiftahFentaw/gebeya-ecommerce")
-                                        i.bi.bi-github.me-1
-                                        | View Code
-                                    a.btn.btn-primary.btn-sm(
-                                      data-bs-toggle="modal",
-                                      data-bs-target="#previewModal",
-                                      data-project="gebeya"
-                                    )
-                                      i.bi.bi-play-circle.me-1
-                                      | Preview
+          .row.gx-5
+            // Project Card 1 - Gebeya E-commerce App
+            .col-lg-6.mb-5
+              .card.h-100.shadow.border-0.project-card
+                .position-relative
+                  img.card-img-top.project-image(src='assets/gebeya.png', alt='Gebeya E-commerce App')
+                  .project-overlay
+                    .project-links
+                      a.btn.btn-outline-light.btn-sm(href="https://github.com/MiftahFentaw/gebeya-ecommerce", target="_blank")
+                        i.bi.bi-github.me-1
+                        | View Code
+                      a.btn.btn-light.btn-sm(data-bs-toggle="modal", data-bs-target="#previewModal", data-project="gebeya")
+                        i.bi.bi-play-circle.me-1
+                        | Preview
+                .card-body.p-4
+                  .project-badge.mb-3
+                    span.badge.bg-primary.me-2 Flutter
+                    span.badge.bg-secondary.me-2 Provider
+                    span.badge.bg-success Firebase
+                  h5.card-title.fw-bolder Gebeya E-commerce App
+                  p.card-text Developed a comprehensive cross-platform e-commerce app using Flutter, Provider, and Firebase.
+                .card-footer.p-4.pt-0.bg-transparent.border-top-0
+                  .d-flex.align-items-end.justify-content-between
+                    .d-flex.align-items-center
+                      .small
+                        .fw-bold Features:
+                        .text-muted Real-time inventory, push notifications, offline support, and more.
 
-              // Project Card 2 - Social Media Platform
-              .card.overflow-hidden.shadow.rounded-4.border-0.mb-5.project-card
-                .card-body.p-0
-                  .row.g-0
-                    .col-md-6.order-md-2
-                      .p-5
-                        .project-badge.mb-3
-                          span.badge.bg-primary.me-2 Flutter
-                          span.badge.bg-warning.me-2 Offline-app
-                          span.badge.bg-info Local
-                        h2.fw-bolder.mb-3 Huda Islamic
-                        p.mb-4 Built a basic offline Islamic app using Flutter. The app includes simple features like Quran reading (text only), a Tasbih counter, access to a few Islamic books (PDF or text), and a basic section for daily duas or reminders. Everything works offline, with a clean and minimal UI. The project was created to practice Flutter and build a useful tool for everyday Islamic use.
-                        .project-features.mb-3
-                          strong Features:
-                          | Quran Reading, Tasbih, Islamic Books, Many Other, 
-                    .col-md-6.order-md-1
-                      .position-relative
-                        img.img-fluid.project-image(
-                          src="assets/huda.jpg",
-                          alt="huda islamic",
-                          style="width: 100%; height: 100%; object-fit: cover"
-                        )
-                        .project-overlay
-                          .project-links
-                            a.btn.btn-outline-primary.btn-sm(href="https://github.com/Miftah-Fentaw/Huda-Islamic.git")
-                              i.bi.bi-github.me-1
-                              | View Code
-                            a.btn.btn-primary.btn-sm(
-                              data-bs-toggle="modal",
-                              data-bs-target="#previewModal",
-                              data-project="huda"
-                            )
-                              i.bi.bi-play-circle.me-1
-                              | Preview
+            // Project Card 2 - Huda Islamic App
+            .col-lg-6.mb-5
+              .card.h-100.shadow.border-0.project-card
+                .position-relative
+                  img.card-img-top.project-image(src="assets/huda.jpg", alt="Huda Islamic App")
+                  .project-overlay
+                    .project-links
+                      a.btn.btn-outline-light.btn-sm(href="https://github.com/Miftah-Fentaw/Huda-Islamic.git", target="_blank")
+                        i.bi.bi-github.me-1
+                        | View Code
+                      a.btn.btn-light.btn-sm(data-bs-toggle="modal", data-bs-target="#previewModal", data-project="huda")
+                        i.bi.bi-play-circle.me-1
+                        | Preview
+                .card-body.p-4
+                  .project-badge.mb-3
+                    span.badge.bg-primary.me-2 Flutter
+                    span.badge.bg-warning.me-2 Offline-first
+                    span.badge.bg-info Local
+                  h5.card-title.fw-bolder Huda Islamic App
+                  p.card-text Built a basic offline Islamic app with features like Quran reading, a Tasbih counter, and Islamic books.
+                .card-footer.p-4.pt-0.bg-transparent.border-top-0
+                  .d-flex.align-items-end.justify-content-between
+                    .d-flex.align-items-center
+                      .small
+                        .fw-bold Features:
+                        .text-muted Quran Reading, Tasbih, Islamic Books, and more.
 
-              // Project Card 3 - Autosort file sortet script Tool
-              .card.overflow-hidden.shadow.rounded-4.border-0.mb-5.project-card
-                .card-body.p-0
-                  .row.g-0
-                    .col-md-6
-                      .p-5
-                        .project-badge.mb-3
-                          span.badge.bg-primary.me-2 Flutter
-                          span.badge.bg-success.me-2 mobile app
-                          span.badge.bg-info offline + online
-                        h2.fw-bolder.mb-3 Mance player
-                        p.mb-4 Developed a lightweight offline media player app using Flutter. The application allows users to browse and play local audio and video files with basic functionality such as play, pause, seek, and volume control. It supports common formats like MP3 and MP4, and features a straightforward layout for ease of use. This project was built to explore media handling in Flutter and improve understanding of local file access and playback features.
-                        .project-features.mb-3
-                          strong Features:
-                          | local files, Folder creation, video playing, Light audio and video playing,easy to use, multiple file formats
-                    .col-md-6
-                      .position-relative
-                        img.img-fluid.project-image(
-                          src="assets/Mance.jpg",
-                          alt="Mance Player",
-                          style="width: 100%; height: 100%; object-fit: cover"
-                        )
-                        .project-overlay
-                          .project-links
-                            a.btn.btn-outline-primary.btn-sm(href="https://github.com/MiftahFentaw/AutoSort" target="_blank")
-                              i.bi.bi-github.me-1
-                              | View Code
-                            a.btn.btn-primary.btn-sm(
-                              data-bs-toggle="modal",
-                              data-bs-target="#previewModal",
-                              data-project="autosort"
-                            )
-                              i.bi.bi-play-circle.me-1
-                              | Preview
+            // Project Card 3 - Mance Player
+            .col-lg-6.mb-5
+              .card.h-100.shadow.border-0.project-card
+                .position-relative
+                  img.card-img-top.project-image(src="assets/Mance.jpg", alt="Mance Player")
+                  .project-overlay
+                    .project-links
+                      a.btn.btn-outline-light.btn-sm(href="https://github.com/MiftahFentaw/AutoSort", target="_blank")
+                        i.bi.bi-github.me-1
+                        | View Code
+                      a.btn.btn-light.btn-sm(data-bs-toggle="modal", data-bs-target="#previewModal", data-project="autosort")
+                        i.bi.bi-play-circle.me-1
+                        | Preview
+                .card-body.p-4
+                  .project-badge.mb-3
+                    span.badge.bg-primary.me-2 Flutter
+                    span.badge.bg-success.me-2 Media
+                    span.badge.bg-info Offline
+                  h5.card-title.fw-bolder Mance Player
+                  p.card-text A lightweight offline media player app to browse and play local audio and video files.
+                .card-footer.p-4.pt-0.bg-transparent.border-top-0
+                  .d-flex.align-items-end.justify-content-between
+                    .d-flex.align-items-center
+                      .small
+                        .fw-bold Features:
+                        .text-muted Local file access, audio/video playback, easy to use.
 
-              // Project Card 4 - Taskify task management
-              .card.overflow-hidden.shadow.rounded-4.border-0.mb-5.project-card
-                .card-body.p-0
-                  .row.g-0
-                    .col-md-6.order-md-2
-                      .p-5
-                        .project-badge.mb-3
-                          span.badge.bg-primary.me-2 React native
-                          span.badge.bg-secondary.me-2 Android
-                          span.badge.bg-success Firebase
-                        h2.fw-bolder.mb-3 Taskify
-                        p.mb-4 Built a very detailed,robust and responsive to-do and task management Mobile app where users can add, edit, and delete daily tasks. Data is stored in supebase , and the UI updates instantly.
-                        .project-features.mb-3
-                          strong Features:
-                          | Project scaffolding, File operations, API testing, Custom scripts, Cross-platform support
-                    .col-md-6.order-md-1
-                      .position-relative
-                        img.img-fluid.project-image(
-                          src="assets/Taskify.jpg",
-                          alt="Taskify",
-                          style="width: 100%; height: 100%; object-fit: cover"
-                        )
-                        .project-overlay
-                          .project-links
-                            a.btn.btn-outline-primary.btn-sm(href="https://github.com/MiftahFentaw/Taskify")
-                              i.bi.bi-github.me-1
-                              | View Code
-                            a.btn.btn-primary.btn-sm(
-                              data-bs-toggle="modal",
-                              data-bs-target="#previewModal",
-                              data-project="taskify"
-                            )
-                              i.bi.bi-play-circle.me-1
-                              | Preview
+            // Project Card 4 - Taskify
+            .col-lg-6.mb-5
+              .card.h-100.shadow.border-0.project-card
+                .position-relative
+                  img.card-img-top.project-image(src="assets/Taskify.jpg", alt="Taskify App")
+                  .project-overlay
+                    .project-links
+                      a.btn.btn-outline-light.btn-sm(href="https://github.com/MiftahFentaw/Taskify", target="_blank")
+                        i.bi.bi-github.me-1
+                        | View Code
+                      a.btn.btn-light.btn-sm(data-bs-toggle="modal", data-bs-target="#previewModal", data-project="taskify")
+                        i.bi.bi-play-circle.me-1
+                        | Preview
+                .card-body.p-4
+                  .project-badge.mb-3
+                    span.badge.bg-primary.me-2 React Native
+                    span.badge.bg-secondary.me-2 Android
+                    span.badge.bg-success Firebase
+                  h5.card-title.fw-bolder Taskify
+                  p.card-text A robust and responsive to-do and task management app using React Native and Supabase.
+                .card-footer.p-4.pt-0.bg-transparent.border-top-0
+                  .d-flex.align-items-end.justify-content-between
+                    .d-flex.align-items-center
+                      .small
+                        .fw-bold Features:
+                        .text-muted CRUD operations, real-time data sync, instant UI updates.
 
-              // Preview Modal
-              #previewModal.modal.fade(tabindex='-1', aria-labelledby='previewModalLabel', aria-hidden='true')
-                .modal-dialog.modal-lg.modal-dialog-centered
-                  .modal-content
-                    .modal-header
-                      h5#previewModalLabel.modal-title Project Preview
-                      button.btn-close(type='button', data-bs-dismiss='modal', aria-label='Close')
-                    .modal-body
-                      #previewCarousel.carousel.slide(data-bs-ride='carousel')
-                        .carousel-inner
-                          // Carousel items will be injected here by JavaScript
-                        button.carousel-control-prev(type='button', data-bs-target='#previewCarousel', data-bs-slide='prev')
-                          span.carousel-control-prev-icon(aria-hidden='true')
-                          span.visually-hidden Previous
-                        button.carousel-control-next(type='button', data-bs-target='#previewCarousel', data-bs-slide='next')
-                          span.carousel-control-next-icon(aria-hidden='true')
-                          span.visually-hidden Next
+          // Preview Modal - Moved outside the column container for proper Bootstrap modal functionality
+          #previewModal.modal.fade(tabindex='-1', aria-labelledby='previewModalLabel', aria-hidden='true')
+            .modal-dialog.modal-md.modal-dialog-centered
+              .modal-content
+                .modal-header
+                  h5#previewModalLabel.modal-title Project Preview
+                  button.btn-close(type='button', data-bs-dismiss='modal', aria-label='Close')
+                .modal-body
+                  #previewCarousel.carousel.slide(data-bs-ride='carousel')
+                    .carousel-inner
+                      // Carousel items will be injected here by JavaScript
+                    button.carousel-control-prev(type='button', data-bs-target='#previewCarousel', data-bs-slide='prev')
+                      span.carousel-control-prev-icon(aria-hidden='true')
+                      span.visually-hidden Previous
+                    button.carousel-control-next(type='button', data-bs-target='#previewCarousel', data-bs-slide='next')
+                      span.carousel-control-next-icon(aria-hidden='true')
+                      span.visually-hidden Next
 
       // Contact Section
       section#contact.py-5
@@ -557,3 +531,26 @@ html(lang="en")
     include includes/footer.pug
 
     include includes/scripts.pug
+
+    // --- Custom Scripts for Modal Functionality ---
+    script.
+      document.addEventListener('DOMContentLoaded', function () {
+        // 1. Move the modal to the body for correct stacking and event handling.
+        const previewModal = document.getElementById('previewModal');
+        if (previewModal) {
+          document.body.appendChild(previewModal);
+        }
+
+        // 2. Add a more robust event listener to handle showing the modal.
+        // This ensures Bootstrap's event listeners (for closing) are always active.
+        document.querySelectorAll('[data-bs-toggle="modal"]').forEach(trigger => {
+          trigger.addEventListener('click', function (event) {
+            const targetSelector = this.getAttribute('data-bs-target');
+            const modalElement = document.querySelector(targetSelector);
+            if (modalElement) {
+              const modal = bootstrap.Modal.getOrCreateInstance(modalElement);
+              modal.show();
+            }
+          });
+        });
+      });

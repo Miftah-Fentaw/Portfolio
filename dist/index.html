@@ -16,6 +16,8 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <!-- Custom CSS for animations and modal fixes-->
+        <link rel="stylesheet" href="css/custom.css" />
     </head>
     <body class="d-flex flex-column h-100">
         <main class="flex-shrink-0">
@@ -434,185 +436,183 @@
                         <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Projects</span></h2>
                         <p class="lead fw-light mb-4">My recent work.</p>
                     </div>
-                    <div class="row gx-5 justify-content-center">
-                        <div class="col-lg-11 col-xl-9 col-xxl-8">
-                            <!-- Project Card 1 - Gebeya E-commerce App-->
-                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5 project-card">
-                                <div class="card-body p-0">
-                                    <div class="row g-0">
-                                        <div class="col-md-6">
-                                            <div class="p-5">
-                                                <div class="project-badge mb-3">
-                                                    <span class="badge bg-primary me-2">Flutter</span>
-                                                    <span class="badge bg-secondary me-2">Provider</span>
-                                                    <span class="badge bg-success">Firebase</span>
-                                                </div>
-                                                <h2 class="fw-bolder mb-3">Gebeya E-commerce Mobile App</h2>
-                                                <p class="mb-4">Developed a comprehensive cross-platform e-commerce mobile application for Gebeya using Flutter, featuring advanced product listings, intelligent shopping cart functionality, and secure payment integration. Implemented state management with Provider pattern and integrated with Firebase for real-time data synchronization and user authentication.</p>
-                                                <div class="project-features mb-3">
-                                                    <strong>Features:</strong>
-                                                    Real-time inventory, Push notifications, Offline support, Multi-language support, User authentication, Payment integration
-                                                </div>
-                                            </div>
+                    <div class="row gx-5">
+                        <!-- Project Card 1 - Gebeya E-commerce App-->
+                        <div class="col-lg-6 mb-5">
+                            <div class="card h-100 shadow border-0 project-card">
+                                <div class="position-relative">
+                                    <img class="card-img-top project-image" src="assets/gebeya.png" alt="Gebeya E-commerce App" />
+                                    <div class="project-overlay">
+                                        <div class="project-links">
+                                            <a class="btn btn-outline-light btn-sm" href="https://github.com/MiftahFentaw/gebeya-ecommerce" target="_blank">
+                                                <i class="bi bi-github me-1"></i>
+                                                View Code
+                                            </a>
+                                            <a class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#previewModal" data-project="gebeya">
+                                                <i class="bi bi-play-circle me-1"></i>
+                                                Preview
+                                            </a>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="position-relative">
-                                                <img class="img-fluid project-image" src="assets/gebeya.png" alt="Gebeya E-commerce App" style="width: 100%; height: 100%; object-fit: cover" />
-                                                <div class="project-overlay">
-                                                    <div class="project-links">
-                                                        <a class="btn btn-outline-primary btn-sm" href="https://github.com/MiftahFentaw/gebeya-ecommerce">
-                                                            <i class="bi bi-github me-1"></i>
-                                                            View Code
-                                                        </a>
-                                                        <a class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#previewModal" data-project="gebeya">
-                                                            <i class="bi bi-play-circle me-1"></i>
-                                                            Preview
-                                                        </a>
-                                                    </div>
-                                                </div>
+                                    </div>
+                                </div>
+                                <div class="card-body p-4">
+                                    <div class="project-badge mb-3">
+                                        <span class="badge bg-primary me-2">Flutter</span>
+                                        <span class="badge bg-secondary me-2">Provider</span>
+                                        <span class="badge bg-success">Firebase</span>
+                                    </div>
+                                    <h5 class="card-title fw-bolder">Gebeya E-commerce App</h5>
+                                    <p class="card-text">Developed a comprehensive cross-platform e-commerce app using Flutter, Provider, and Firebase.</p>
+                                </div>
+                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                                    <div class="d-flex align-items-end justify-content-between">
+                                        <div class="d-flex align-items-center">
+                                            <div class="small">
+                                                <div class="fw-bold">Features:</div>
+                                                <div class="text-muted">Real-time inventory, push notifications, offline support, and more.</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Project Card 2 - Social Media Platform-->
-                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5 project-card">
-                                <div class="card-body p-0">
-                                    <div class="row g-0">
-                                        <div class="col-md-6 order-md-2">
-                                            <div class="p-5">
-                                                <div class="project-badge mb-3">
-                                                    <span class="badge bg-primary me-2">Flutter</span>
-                                                    <span class="badge bg-warning me-2">Offline-app</span>
-                                                    <span class="badge bg-info">Local</span>
-                                                </div>
-                                                <h2 class="fw-bolder mb-3">Huda Islamic</h2>
-                                                <p class="mb-4">Built a basic offline Islamic app using Flutter. The app includes simple features like Quran reading (text only), a Tasbih counter, access to a few Islamic books (PDF or text), and a basic section for daily duas or reminders. Everything works offline, with a clean and minimal UI. The project was created to practice Flutter and build a useful tool for everyday Islamic use.</p>
-                                                <div class="project-features mb-3">
-                                                    <strong>Features:</strong>
-                                                    Quran Reading, Tasbih, Islamic Books, Many Other,
-                                                </div>
-                                            </div>
+                        </div>
+                        <!-- Project Card 2 - Huda Islamic App-->
+                        <div class="col-lg-6 mb-5">
+                            <div class="card h-100 shadow border-0 project-card">
+                                <div class="position-relative">
+                                    <img class="card-img-top project-image" src="assets/huda.jpg" alt="Huda Islamic App" />
+                                    <div class="project-overlay">
+                                        <div class="project-links">
+                                            <a class="btn btn-outline-light btn-sm" href="https://github.com/Miftah-Fentaw/Huda-Islamic.git" target="_blank">
+                                                <i class="bi bi-github me-1"></i>
+                                                View Code
+                                            </a>
+                                            <a class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#previewModal" data-project="huda">
+                                                <i class="bi bi-play-circle me-1"></i>
+                                                Preview
+                                            </a>
                                         </div>
-                                        <div class="col-md-6 order-md-1">
-                                            <div class="position-relative">
-                                                <img class="img-fluid project-image" src="assets/huda.jpg" alt="huda islamic" style="width: 100%; height: 100%; object-fit: cover" />
-                                                <div class="project-overlay">
-                                                    <div class="project-links">
-                                                        <a class="btn btn-outline-primary btn-sm" href="https://github.com/Miftah-Fentaw/Huda-Islamic.git">
-                                                            <i class="bi bi-github me-1"></i>
-                                                            View Code
-                                                        </a>
-                                                        <a class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#previewModal" data-project="huda">
-                                                            <i class="bi bi-play-circle me-1"></i>
-                                                            Preview
-                                                        </a>
-                                                    </div>
-                                                </div>
+                                    </div>
+                                </div>
+                                <div class="card-body p-4">
+                                    <div class="project-badge mb-3">
+                                        <span class="badge bg-primary me-2">Flutter</span>
+                                        <span class="badge bg-warning me-2">Offline-first</span>
+                                        <span class="badge bg-info">Local</span>
+                                    </div>
+                                    <h5 class="card-title fw-bolder">Huda Islamic App</h5>
+                                    <p class="card-text">Built a basic offline Islamic app with features like Quran reading, a Tasbih counter, and Islamic books.</p>
+                                </div>
+                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                                    <div class="d-flex align-items-end justify-content-between">
+                                        <div class="d-flex align-items-center">
+                                            <div class="small">
+                                                <div class="fw-bold">Features:</div>
+                                                <div class="text-muted">Quran Reading, Tasbih, Islamic Books, and more.</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Project Card 3 - Autosort file sortet script Tool-->
-                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5 project-card">
-                                <div class="card-body p-0">
-                                    <div class="row g-0">
-                                        <div class="col-md-6">
-                                            <div class="p-5">
-                                                <div class="project-badge mb-3">
-                                                    <span class="badge bg-primary me-2">Flutter</span>
-                                                    <span class="badge bg-success me-2">mobile app</span>
-                                                    <span class="badge bg-info">offline + online</span>
-                                                </div>
-                                                <h2 class="fw-bolder mb-3">Mance player</h2>
-                                                <p class="mb-4">Developed a lightweight offline media player app using Flutter. The application allows users to browse and play local audio and video files with basic functionality such as play, pause, seek, and volume control. It supports common formats like MP3 and MP4, and features a straightforward layout for ease of use. This project was built to explore media handling in Flutter and improve understanding of local file access and playback features.</p>
-                                                <div class="project-features mb-3">
-                                                    <strong>Features:</strong>
-                                                    local files, Folder creation, video playing, Light audio and video playing,easy to use, multiple file formats
-                                                </div>
-                                            </div>
+                        </div>
+                        <!-- Project Card 3 - Mance Player-->
+                        <div class="col-lg-6 mb-5">
+                            <div class="card h-100 shadow border-0 project-card">
+                                <div class="position-relative">
+                                    <img class="card-img-top project-image" src="assets/Mance.jpg" alt="Mance Player" />
+                                    <div class="project-overlay">
+                                        <div class="project-links">
+                                            <a class="btn btn-outline-light btn-sm" href="https://github.com/MiftahFentaw/AutoSort" target="_blank">
+                                                <i class="bi bi-github me-1"></i>
+                                                View Code
+                                            </a>
+                                            <a class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#previewModal" data-project="autosort">
+                                                <i class="bi bi-play-circle me-1"></i>
+                                                Preview
+                                            </a>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="position-relative">
-                                                <img class="img-fluid project-image" src="assets/Mance.jpg" alt="Mance Player" style="width: 100%; height: 100%; object-fit: cover" />
-                                                <div class="project-overlay">
-                                                    <div class="project-links">
-                                                        <a class="btn btn-outline-primary btn-sm" href="https://github.com/MiftahFentaw/AutoSort" target="_blank">
-                                                            <i class="bi bi-github me-1"></i>
-                                                            View Code
-                                                        </a>
-                                                        <a class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#previewModal" data-project="autosort">
-                                                            <i class="bi bi-play-circle me-1"></i>
-                                                            Preview
-                                                        </a>
-                                                    </div>
-                                                </div>
+                                    </div>
+                                </div>
+                                <div class="card-body p-4">
+                                    <div class="project-badge mb-3">
+                                        <span class="badge bg-primary me-2">Flutter</span>
+                                        <span class="badge bg-success me-2">Media</span>
+                                        <span class="badge bg-info">Offline</span>
+                                    </div>
+                                    <h5 class="card-title fw-bolder">Mance Player</h5>
+                                    <p class="card-text">A lightweight offline media player app to browse and play local audio and video files.</p>
+                                </div>
+                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                                    <div class="d-flex align-items-end justify-content-between">
+                                        <div class="d-flex align-items-center">
+                                            <div class="small">
+                                                <div class="fw-bold">Features:</div>
+                                                <div class="text-muted">Local file access, audio/video playback, easy to use.</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Project Card 4 - Taskify task management-->
-                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5 project-card">
-                                <div class="card-body p-0">
-                                    <div class="row g-0">
-                                        <div class="col-md-6 order-md-2">
-                                            <div class="p-5">
-                                                <div class="project-badge mb-3">
-                                                    <span class="badge bg-primary me-2">React native</span>
-                                                    <span class="badge bg-secondary me-2">Android</span>
-                                                    <span class="badge bg-success">Firebase</span>
-                                                </div>
-                                                <h2 class="fw-bolder mb-3">Taskify</h2>
-                                                <p class="mb-4">Built a very detailed,robust and responsive to-do and task management Mobile app where users can add, edit, and delete daily tasks. Data is stored in supebase , and the UI updates instantly.</p>
-                                                <div class="project-features mb-3">
-                                                    <strong>Features:</strong>
-                                                    Project scaffolding, File operations, API testing, Custom scripts, Cross-platform support
-                                                </div>
-                                            </div>
+                        </div>
+                        <!-- Project Card 4 - Taskify-->
+                        <div class="col-lg-6 mb-5">
+                            <div class="card h-100 shadow border-0 project-card">
+                                <div class="position-relative">
+                                    <img class="card-img-top project-image" src="assets/Taskify.jpg" alt="Taskify App" />
+                                    <div class="project-overlay">
+                                        <div class="project-links">
+                                            <a class="btn btn-outline-light btn-sm" href="https://github.com/MiftahFentaw/Taskify" target="_blank">
+                                                <i class="bi bi-github me-1"></i>
+                                                View Code
+                                            </a>
+                                            <a class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#previewModal" data-project="taskify">
+                                                <i class="bi bi-play-circle me-1"></i>
+                                                Preview
+                                            </a>
                                         </div>
-                                        <div class="col-md-6 order-md-1">
-                                            <div class="position-relative">
-                                                <img class="img-fluid project-image" src="assets/Taskify.jpg" alt="Taskify" style="width: 100%; height: 100%; object-fit: cover" />
-                                                <div class="project-overlay">
-                                                    <div class="project-links">
-                                                        <a class="btn btn-outline-primary btn-sm" href="https://github.com/MiftahFentaw/Taskify">
-                                                            <i class="bi bi-github me-1"></i>
-                                                            View Code
-                                                        </a>
-                                                        <a class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#previewModal" data-project="taskify">
-                                                            <i class="bi bi-play-circle me-1"></i>
-                                                            Preview
-                                                        </a>
-                                                    </div>
-                                                </div>
+                                    </div>
+                                </div>
+                                <div class="card-body p-4">
+                                    <div class="project-badge mb-3">
+                                        <span class="badge bg-primary me-2">React Native</span>
+                                        <span class="badge bg-secondary me-2">Android</span>
+                                        <span class="badge bg-success">Firebase</span>
+                                    </div>
+                                    <h5 class="card-title fw-bolder">Taskify</h5>
+                                    <p class="card-text">A robust and responsive to-do and task management app using React Native and Supabase.</p>
+                                </div>
+                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                                    <div class="d-flex align-items-end justify-content-between">
+                                        <div class="d-flex align-items-center">
+                                            <div class="small">
+                                                <div class="fw-bold">Features:</div>
+                                                <div class="text-muted">CRUD operations, real-time data sync, instant UI updates.</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Preview Modal-->
-                            <div class="modal fade" id="previewModal" tabindex="-1" aria-labelledby="previewModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-lg modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="previewModalLabel">Project Preview</h5>
-                                            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="carousel slide" id="previewCarousel" data-bs-ride="carousel">
-                                                <div class="carousel-inner"><!-- Carousel items will be injected here by JavaScript--></div>
-                                                <button class="carousel-control-prev" type="button" data-bs-target="#previewCarousel" data-bs-slide="prev">
-                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                    <span class="visually-hidden">Previous</span>
-                                                </button>
-                                                <button class="carousel-control-next" type="button" data-bs-target="#previewCarousel" data-bs-slide="next">
-                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                    <span class="visually-hidden">Next</span>
-                                                </button>
-                                            </div>
-                                        </div>
+                        </div>
+                    </div>
+                    <!-- Preview Modal - Moved outside the column container for proper Bootstrap modal functionality-->
+                    <div class="modal fade" id="previewModal" tabindex="-1" aria-labelledby="previewModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-md modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="previewModalLabel">Project Preview</h5>
+                                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="carousel slide" id="previewCarousel" data-bs-ride="carousel">
+                                        <div class="carousel-inner"><!-- Carousel items will be injected here by JavaScript--></div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#previewCarousel" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#previewCarousel" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -700,5 +700,28 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <!-- --- Custom Scripts for Modal Functionality ----->
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                // 1. Move the modal to the body for correct stacking and event handling.
+                const previewModal = document.getElementById('previewModal');
+                if (previewModal) {
+                    document.body.appendChild(previewModal);
+                }
+
+                // 2. Add a more robust event listener to handle showing the modal.
+                // This ensures Bootstrap's event listeners (for closing) are always active.
+                document.querySelectorAll('[data-bs-toggle="modal"]').forEach((trigger) => {
+                    trigger.addEventListener('click', function (event) {
+                        const targetSelector = this.getAttribute('data-bs-target');
+                        const modalElement = document.querySelector(targetSelector);
+                        if (modalElement) {
+                            const modal = bootstrap.Modal.getOrCreateInstance(modalElement);
+                            modal.show();
+                        }
+                    });
+                });
+            });
+        </script>
     </body>
 </html>

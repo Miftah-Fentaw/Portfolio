@@ -1,6 +1,5 @@
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Smooth scrolling for internal links
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
@@ -11,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Scroll-triggered animations using Intersection Observer
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -25,19 +23,16 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, observerOptions);
 
-    // Observe sections for animations
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
         observer.observe(section);
     });
 
-    // Observe text elements (headings, paragraphs)
     const textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, .lead');
     textElements.forEach(element => {
         observer.observe(element);
     });
 
-    // Observe containers (cards, skill containers, etc.)
     const containers = document.querySelectorAll('.card, .skill-container, .experience-card, .project-card, .developer-stats .stat-item');
     containers.forEach(container => {
         observer.observe(container);
@@ -49,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const button = event.relatedTarget;
             const project = button.getAttribute("data-project");
             const carouselInner = previewModal.querySelector(".carousel-inner");
-            carouselInner.innerHTML = ""; // Clear previous items
+            carouselInner.innerHTML = "";
 
             const projectImages = {
                 gebeya: ["gebeya1.png", "gebeya2.png", "gebeya3.png","gebeya4.png"],
@@ -67,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         carouselItem.classList.add("active");
                     }
                     carouselItem.innerHTML = `
-                        <img src="assets/screenshots/${image}" class="d-block w-100" alt="Project screenshot">
+                        <img src="assets/screenshots/${image}" class="img-fluid preview-image" alt="Project screenshot" style="max-height: 400px; object-fit: contain; margin: 0 auto;">
                     `;
                     carouselInner.appendChild(carouselItem);
                 });
@@ -91,39 +86,33 @@ document.addEventListener("DOMContentLoaded", () => {
             const submitSuccessMessage = document.getElementById('submitSuccessMessage');
             const submitErrorMessage = document.getElementById('submitErrorMessage');
 
-            // Client-side validation
             let isValid = true;
             const nameInput = document.getElementById('name');
             const emailInput = document.getElementById('email');
             const projectTypeSelect = document.getElementById('projectType');
             const messageTextarea = document.getElementById('message');
 
-            // Reset previous validation states
             nameInput.classList.remove('is-invalid');
             emailInput.classList.remove('is-invalid');
             projectTypeSelect.classList.remove('is-invalid');
             messageTextarea.classList.remove('is-invalid');
 
-            // Validate name
             if (!name) {
                 nameInput.classList.add('is-invalid');
                 isValid = false;
             }
 
-            // Validate email
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!email || !emailRegex.test(email)) {
                 emailInput.classList.add('is-invalid');
                 isValid = false;
             }
 
-            // Validate project type
             if (!projectType) {
                 projectTypeSelect.classList.add('is-invalid');
                 isValid = false;
             }
 
-            // Validate message
             if (!message) {
                 messageTextarea.classList.add('is-invalid');
                 isValid = false;
